@@ -3,10 +3,7 @@ terraform {
     organization = "avinashmamidi"
 
     workspaces {
-      name = "terraform-lambda-invoke"
+      name = "lambda-invoke"
     }
   }
 }
-/*credentials "app.terraform.io" {
-  token = ""
-}*/

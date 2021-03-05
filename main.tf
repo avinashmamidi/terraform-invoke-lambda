@@ -4,7 +4,7 @@ provider "aws" {
 }
 
 data "aws_lambda_invocation" "example" {
-  function_name = "arn:aws:lambda:us-west-2:464599248654:function:delete"
+  function_name = "delete"
 
   input = <<JSON
 {
@@ -14,6 +14,6 @@ data "aws_lambda_invocation" "example" {
 JSON
 }
 
-output "result_entry" {
-  value = jsondecode(data.aws_lambda_invocation.example.result)["key1"]
-}
+//output "result_entry" {
+//  value = jsondecode(data.aws_lambda_invocation.example.result)["key1"]
+//}
