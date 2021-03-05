@@ -7,13 +7,13 @@ data "aws_lambda_invocation" "example" {
   function_name = "delete"
 
   input = jsonencode({
-    key1 = var.key1
-    key2 = var.key2
+    one = var.key1
+    one = var.key2
 
   })
 }
 output "result_entry" {
-  value = jsondecode(data.aws_lambda_invocation.example.result)["key1"]
+  value = jsondecode(data.aws_lambda_invocation.example.result)["one"]
 }
 
 variable "key1" {
