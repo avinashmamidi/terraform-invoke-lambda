@@ -14,6 +14,6 @@ data "aws_lambda_invocation" "example" {
 JSON
 }
 
-//output "result_entry" {
-//  value = jsondecode(data.aws_lambda_invocation.example.result)["key1"]
-//}
+output "result_entry" {
+  value = jsondecode(data.aws_lambda_invocation.example.result)["key1"]
+}
