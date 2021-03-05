@@ -6,14 +6,14 @@ provider "aws" {
 data "aws_lambda_invocation" "example" {
   function_name = "delete"
 
-  input = <<JSON
-{
-  "key1": "value1",
-  "key2": "value2"
+  input = jsonencode({
+    instance_id = var.key1
+  })
 }
-JSON
+output "result_entry" {
+  value = jsondecode(data.aws_lambda_invocation.example.result)["instance_id"]
 }
 
-output "result_entry" {
-  value = jsondecode(data.aws_lambda_invocation.example.result)["key1"]
+variable "key1" {
+  default = "val1"
 }
