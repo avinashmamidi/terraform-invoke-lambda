@@ -13,7 +13,7 @@ data "aws_lambda_invocation" "example" {
   })
 }
 output "result_entry" {
-  value = jsondecode(data.aws_lambda_invocation.example.result)["one"]
+  value = jsondecode(data.aws_lambda_invocation.example.result)
 }
 
 variable "key1" {
